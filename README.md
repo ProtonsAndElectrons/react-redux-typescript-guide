@@ -1327,7 +1327,7 @@ declare module 'MyTypes' {
 
 The store declaration also augments `typesafe-actions` with the same `RootAction` through its `Types` interface. That lets helpers from `typesafe-actions` understand the app's root action union without each feature re-declaring it.
 
-This keeps the dependency direction simple. Feature modules export their own action, state, selector, and service types. The root store or service barrel composes those exports into application-wide types, and consumers import only the stable names they need. Use named imports for these root-level aliases; examples that need grouped access to the ambient module can still import the `MyTypes` namespace:
+This keeps the dependency direction simple. Feature modules export their own action, state, selector, and service types. The root store or service barrel composes those exports into application-wide types, and consumers import only the stable names they need. This section uses named imports for root-level aliases; the guide's existing namespace-style examples remain useful when grouped access to the ambient module is clearer:
 
 ```tsx
 import { RootAction, RootState, Services } from 'MyTypes';
